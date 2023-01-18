@@ -1,0 +1,16 @@
+Basarab_I, 01/01/1269, Male,Domnitor al Țării Românești,1
+Nicolae_Alexandru, 01/01/1352,Male,Domnitor al Țării Românești,2
+Vlaicu_Voda, 01/01/1325, Male,Domnitor al Țării Românești,0
+Radu_I, 01/01/1330, Male, Domnitor al Țării Românești,2
+Dan_I,01/01/1354, Male,Domnitor al Țării Românești,2
+Mircea_cel_Batran,01/01/1355, Male,Domnitor al Țării Românești,4
+Vlad_Uzurpatorul,01/01/1394,Male,Domnitor al Țării Românești,0
+Dan_al_II_lea,01/06/1432,Male,Domnitor al Țării Românești,1
+Mihail_I,01/01/1390,Male,Domnitor al Țării Românești,0
+Radu_al_II_lea,01/01/1390,Male,Domnitor al Țării Românești,0
+Alexandru_Aldea_I,01/01/1397,Male,Domnitor al Țării Românești,0
+Vlad_Dracul,01/01/1392,Male,Domnitor al Țării Românești,3
+Basarab_al_II_lea,01/01/1400,Male,Domnitor al Țării Românești,0
+Radu_al_II_lea_cel_Frumos,01/01/1437,Male,Domnitor al Țării Românești,0
+Vlad_al_III_lea_Tepes,01/01/1431,Male,Domnitor al Țării Românești,0
+Vlad_Calugarul,01/01/1425,Male,Domnitor al Țării Românești,0
