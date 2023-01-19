@@ -12,6 +12,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using ClassFamilyTree;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace FamilyTree
@@ -61,8 +63,6 @@ namespace FamilyTree
             e.Graphics.TextRenderingHint = TextRenderingHint.AntiAliasGridFit;
             root.DrawTree(e.Graphics);
         }
-
-        // Center the tree on the form.
         private void picTree_Resize(object sender, EventArgs e)
         {
             ArrangeTree();
@@ -83,8 +83,6 @@ namespace FamilyTree
 
             picTree.Refresh();
         }
-
-        // The currently selected node.
         private TreeNode<PictureNode> SelectedNode;
 
         private void picTree_MouseClick(object sender, MouseEventArgs e)
@@ -92,11 +90,9 @@ namespace FamilyTree
             FindNodeUnderMouse(e.Location);
         }
 
-
-        // Set SelectedNode to the node under the mouse.
         private void FindNodeUnderMouse(PointF pt)
         {
-            // Deselect the previously selected node.
+            // Deselect the previous node
             if (SelectedNode != null)
             {
                 SelectedNode.Data.Selected = false;
@@ -119,8 +115,17 @@ namespace FamilyTree
             // Redraw.
             picTree.Refresh();
         }
+        /*
+        private string GetAge (DateTime dateOfBirth)
+        {
+            ClassFamilyTree.Class1 operation= new ClassFamilyTree.Class1();
 
+            int currentYear = DateTime.Now.Year;
+            int birthYear = dateOfBirth.Year;
 
+            return operation.Substract(currentYear, birthYear).ToString();
+            
+        }*/
         private void button1_Click(object sender, EventArgs e)
         {
             picTree.Image = null;
@@ -135,7 +140,7 @@ namespace FamilyTree
             var fileName = openFileDialog1.FileName;
 
             var lines = FileReader.ReadFromFile(fileName);
-
+            
             family = lines.Select(x => FileReader.Parse(x))
                 .Where(x => x != null)
                 .ToList();

@@ -11,7 +11,10 @@ namespace FamilyTree
     //Reads data from file and make a list with Person objects
     public class FileReader
     {
-        
+        public static List<string> ReadFromFile(string fileName)
+        {
+            return File.ReadAllLines(fileName).ToList();
+        }
         //Transforms data in Person object
         public static Person Parse(string line)
         {
