@@ -1,26 +1,29 @@
-name: CI - Classic .NET Framework
+name: Build și Testare .NET Framework
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [master]
   pull_request:
-    branches: [ "master" ]
+    branches: [master]
 
 jobs:
-  build-and-test:
+  build-test:
     runs-on: windows-latest
 
     steps:
-    - name: Checkout code
+    - name: Checkout cod
       uses: actions/checkout@v4
 
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v2
 
+    - name: Restore NuGet packages
+      run: nuget restore ClassFamilyTree.sln
+
     - name: Build solution
       run: msbuild ClassFamilyTree.sln /p:Configuration=Release
 
-    - name: Run tests with VSTest.Console
+    - name: Run unit tests
       run: |
-        dir /s /b *.Tests.dll
+        dir ClassFamilyTree.Tests\bin\Release\*.Tests.dll /s /b
         "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\Extensions\TestPlatform\vstest.console.exe" ClassFamilyTree.Tests\bin\Release\ClassFamilyTree.Tests.dll
