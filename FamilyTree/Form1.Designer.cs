@@ -258,6 +258,48 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+            this.MinimumSize = new System.Drawing.Size(800, 600);
+
+            // Stil tematic verde pentru btnOpenFile
+            this.btnOpenFile.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnOpenFile.ForeColor = System.Drawing.Color.White;
+            this.btnOpenFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenFile.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+
+            // Labeluri tematice
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.ForestGreen;
+
+            // Panouri redimensionabile
+            this.panelTable.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelTree.Anchor = this.panelTable.Anchor;
+
+            // Fundal panouri
+            this.panelTable.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelTree.BackColor = System.Drawing.Color.WhiteSmoke;
+
+            // DataGridView styling
+            this.dataGridView1.Anchor = this.panelTable.Anchor;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.Honeydew;
+            this.dataGridView1.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridView1.DefaultCellStyle.ForeColor = System.Drawing.Color.DarkGreen;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.ForestGreen;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White;
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.dataGridView1.GridColor = System.Drawing.Color.DarkSeaGreen;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+
+            // picTree styling + redimensionare automată
+            this.picTree.BackColor = System.Drawing.Color.Honeydew;
+            this.picTree.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picTree.Dock = System.Windows.Forms.DockStyle.Fill;
+
         }
 
         #endregion
