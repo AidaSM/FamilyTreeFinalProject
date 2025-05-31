@@ -1,4 +1,4 @@
-name: CI - ClassFamilyTree Tests
+name: CI - Classic .NET Framework
 
 on:
   push:
@@ -14,16 +14,13 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v4
-      with:
-        dotnet-version: '8.0.x'
-
-    - name: Restore dependencies
-      run: dotnet restore ClassFamilyTree.Tests/ClassFamilyTree.Tests.csproj
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v2
 
     - name: Build solution
-      run: dotnet build ClassFamilyTree.sln --configuration Release --no-restore
+      run: msbuild ClassFamilyTree.sln /p:Configuration=Release
 
-    - name: Run unit tests
-      run: dotnet test ClassFamilyTree.Tests/ClassFamilyTree.Tests.csproj --no-build --verbosity normal
+    - name: Run tests with VSTest.Console
+      run: |
+        dir /s /b *.Tests.dll
+        "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\IDE\Extensions\TestPlatform\vstest.console.exe" ClassFamilyTree.Tests\bin\Release\ClassFamilyTree.Tests.dll
