@@ -23,6 +23,6 @@ jobs:
     - name: Build solution
       run: msbuild ClassFamilyTree/ClassFamilyTree.sln /p:Configuration=Release
 
-    - name: Run unit tests
+    - name: Search vstest.console.exe on disk
       run: |
-        & "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\TestPlatform\vstest.console.exe" "ClassFamilyTree\ClassFamilyTree.Tests\bin\Release\ClassFamilyTree.Tests.dll"
+        Get-ChildItem -Path "C:\Program Files\Microsoft Visual Studio\" -Recurse -Filter vstest.console.exe -ErrorAction SilentlyContinue | Select-Object FullName
