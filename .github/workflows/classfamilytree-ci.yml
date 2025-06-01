@@ -29,9 +29,12 @@ jobs:
     - name: Create deployment folder
       run: mkdir deploy
 
-    - name: Copy application files to deploy folder
-      run: |
-        Copy-Item -Path FamilyTree\bin\Release\* -Destination deploy\ -Recurse
-        Copy-Item -Path ClassFamilyTree\bin\Release\* -Destination deploy\ -Recurse
+    - name: List files after build
+      shell: powershell
+      run: Get-ChildItem -Recurse
+
+    - name: Deploy - copy built files
+      shell: powershell
+      run: Copy-Item -Path FamilyTree\bin\Debug\* -Destination deploy\ -Recurse -Force
 
 
