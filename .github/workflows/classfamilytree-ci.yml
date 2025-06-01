@@ -33,8 +33,11 @@ jobs:
       shell: powershell
       run: Get-ChildItem -Recurse
 
-    - name: Deploy - copy built files
+    - name: Deploy ClassFamilyTree output
       shell: powershell
-      run: Copy-Item -Path FamilyTree\bin\Debug\* -Destination deploy\ -Recurse -Force
+      run: |
+        New-Item -ItemType Directory -Force -Path deploy
+        Copy-Item -Path ClassFamilyTree/ClassFamilyTree/bin/Release/net8.0/* -Destination deploy -Recurse -Force
+
 
 
