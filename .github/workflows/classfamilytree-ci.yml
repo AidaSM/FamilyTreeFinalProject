@@ -31,9 +31,10 @@ jobs:
         echo "VSTEST_CONSOLE=$vstest" >> $env:GITHUB_ENV
 
     - name: Run unit tests
-      run: |
-        "$env:VSTEST_CONSOLE" "ClassFamilyTree/ClassFamilyTree.Tests/bin/Release/net8.0/ClassFamilyTree.Tests.dll"
       shell: powershell
+      run: |
+        & $env:VSTEST_CONSOLE "ClassFamilyTree/ClassFamilyTree.Tests/bin/Release/net8.0/ClassFamilyTree.Tests.dll"
+
 
     - name: Create deployment folder
       run: mkdir deploy
